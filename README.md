@@ -5,7 +5,7 @@ This workflow models the system when the producer like user IoT device etc gener
 
 The pipeline will read the samples and make a prediction using the passed model. Then it will join the true label with prediction and stote it in the topic passed in config. After that the records as (true label,prediction,window_start), will be aggregated into the confusion matricies, starting with short interval like 1 minute and later into larger one f.e 5 minutes, 15 minutes. When the aggregates are complete, the pipeline computes the matrix which are possible to derive from confusion matrix using the pycm module. The metrics can be specified in the metrics.json file in configs. Metrics then are places into the final topic which later can be read and used, f.e logging with ml-flow, creating dashboards and many more.
 
-There is plenty of room for adjustmetns and changes using the *.env files,configs and by changign the code to adjust it for user needs. However this version uses the model/models passed with docker. For small models it is managable , altough additional container serving the model like BentoML, MLflow could be more preferable, but the spark workers in that case has to make requests for prediction.
+There is plenty of room for adjustmetns and changes using the *.env files,configs and by changing the code to adjust it for user needs. However this version uses the model/models passed with docker. For small models it is managable , altough additional container serving the model like BentoML, MLflow could be more preferable, but the spark workers in that case has to make requests for prediction.
 
 
 # Example use case: 
