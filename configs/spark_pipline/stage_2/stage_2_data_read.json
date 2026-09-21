@@ -1,0 +1,11 @@
+
+{
+    "format":"kafka",
+    "broker_config":{
+        "kafka.bootstrap.servers":"kafka-v2:9092",
+        "subscribe":"ml-labels",
+        "startingOffsets":"latest",
+        "failOnDataLoss":"false",
+        "maxOffsetPerTrigger":1000
+    }
+}

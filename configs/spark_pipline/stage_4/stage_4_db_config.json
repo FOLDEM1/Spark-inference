@@ -1,0 +1,8 @@
+{
+    "host":"host.docker.internal",
+    "port":"5444",
+    "user":"postgres",
+    "password":"password",
+    "table":"batch_tracker_commited",
+    "db": "spark_inference"
+}

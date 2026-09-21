@@ -1,0 +1,11 @@
+
+{
+    "format":"kafka",
+    "outputMode":"append",
+    "broker_config":{
+        "kafka.bootstrap.servers":"kafka-v2:9092",
+        "topic":"ml-stage-3-out",
+        "checkpointLocation": "s3a://spark-inference/checkpoints/stage3"
+    },
+    "trigger":{"processingTime":"10 seconds"}
+}

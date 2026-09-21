@@ -1,0 +1,10 @@
+{
+    "format":"kafka",
+    "broker_config":{
+        "kafka.bootstrap.servers":"kafka-v2:9092",
+        "subscribe":"ml-data",
+        "startingOffsets":"latest",
+        "failOnDataLoss":"false",
+        "maxOffsetPerTrigger":1000
+    }
+}

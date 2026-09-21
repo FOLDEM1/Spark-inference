@@ -1,0 +1,19 @@
+{
+    "stage_1":{
+        "watermark":30,
+        "network_delay":10,
+        "time_metric":"seconds"
+    },
+    "stage_2":{
+        "watermark":30,
+        "network_delay":10,
+        "time_metric":"seconds"
+    },
+    "stage_5":{
+        "watermark":0,
+        "network_delay":0,
+        "time_metric":"seconds"
+        
+    }
+}
+    

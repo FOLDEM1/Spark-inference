@@ -1,0 +1,10 @@
+{
+    "appName":"Spark_inference_v1",
+    "spark_server":"sc://localhost:15002",
+    "remote":true,
+    "config_options":{
+        "spark.driver.bindAddress": "127.0.0.1",
+        "spark.driver.host": "127.0.0.1",
+        "spark.python.worker.timeout": "120"
+    }
+}
