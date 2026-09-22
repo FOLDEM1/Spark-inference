@@ -1,7 +1,7 @@
 # Spark-inference
 This projects consists of docker compose + dockerfiles, spark pipeline , the simple model for classification wine dataset, used dataset + simple sample generator which sends the samples to the broker which later are read by the pipeline.
 
-This workflow models the system when the producer like user IoT device etc generates sample which are sent to broker AND later we anticipate that the labels for given sample will arrive. 
+This workflow models the system when the producer like user, IoT device, etc generates samples which are sent to broker AND later we anticipate that the labels for given samples will arrive. 
 
 The pipeline will read the samples and make a prediction using the passed model. Then it will join the true label with prediction and stote it in the topic passed in config. After that the records as (true label,prediction,window_start), will be aggregated into the confusion matricies, starting with short interval like 1 minute and later into larger one f.e 5 minutes, 15 minutes. There is no strict rule that there is only N labels, the pipeline will take into account possibility of new type of true labels to arrive and fix the confusion matricies at merging stage accordingly by filling the missing values of rows and columns with zeros/0. When the aggregates are complete, the pipeline computes the matrix which are possible to derive from confusion matrix using the pycm module. The metrics can be specified in the metrics.json file in configs. Metrics then are places into the final topic which later can be read and used, f.e logging with ml-flow, creating dashboards and many more.
 
